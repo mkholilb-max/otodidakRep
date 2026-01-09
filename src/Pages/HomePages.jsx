@@ -4,7 +4,7 @@ import BodyCard from "../components/Fragment/Body/BodyCard";
 import AuthLayout from "../components/Layout/AuthLayout";
 import BodyCardNew from "../components/Fragment/Body/BodyCardNew";
 import BodyCommentCard from "../components/Fragment/Body/BodyCommentCard";
-import PreFooter from "../components/Fragment/PreFooter/PreFooter";
+import PreFooter from "../components/Fragment/PreFooter/Prefooter";
 import Footer from "../components/Fragment/Footer/Footer";
 
 
