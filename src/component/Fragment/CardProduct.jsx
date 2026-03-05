@@ -1,30 +1,31 @@
+import { Link } from "react-router-dom"
 import Button from "../Elements/Button"
 
 const CardProduct = (props) => {
     const {children} = props
     return (
-        <div className="w-full max-w-xs max-h-xs bg-slate-600 border-2 border-slate-800 rounded-lg shadow mx-1 my-2 flex flex-col justify-between">
+        <div className="w-full max-w-xs bg-slate-600 border-2 border-slate-800 rounded-lg shadow mx-3 my-4 flex flex-col justify-between">
             {children}
         </div>
     )
 }
 
 const Header = (props) => {
-    const {img} = props
+    const {img, id} = props
     return (
-            <a href="#" className="flex justify-center">
-                <img src={img} alt="product" className="p-6 rounded-t-lg max-h-48" />
-            </a>
+            <Link to={`/product/${id}`} className="flex justify-center">
+                <img src={img} alt="product" className="p-8 rounded-t-lg h-60 w-full object-cover" />
+            </Link>
     )
 }
 
 const Body = (props) => {
     const {children, name} = props
     return (
-        <div className="h-full px-5 pb-5">
+        <div className="h-full px-3 pb-3">
             <a href="#">
-                <h3 className="text-xl font-semibold tracking-tight text-white">{name}</h3>
-                <p className="text-white text-sm">{children}</p>
+                <h3 className="text-xl font-semibold tracking-tight text-white">{name.substring(0,20)}...</h3>
+                <p className="text-white text-sm">{children.substring(0, 100)}</p>
             </a>
         </div>
     )
@@ -33,9 +34,9 @@ const Body = (props) => {
 const Footer = (props) => {
     const {price, handleAddToCart, id} = props
     return (
-            <div className="flex justify-between items-center px-5 pb-5">
-                <span className="text-xl font-bold text-white">
-                    {price.toLocaleString('id-ID', {style: 'currency', currency: 'IDR'})}
+            <div className="flex justify-between items-center px-3 pb-3">
+                <span className="text-md font-bold text-white">
+                    {price.toLocaleString('id-ID', {style: 'currency', currency: 'USD'})}
                 </span>
                 <Button className="bg-blue-700" onClick={() =>handleAddToCart(id)}>Add to Cart</Button>
             </div>
