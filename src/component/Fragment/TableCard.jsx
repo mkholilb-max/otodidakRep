@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { DarkMode } from "../../context/darkmode";
+import { DarkMode } from "../../context/DarkMode";
 import { useTotalPrice, useTotalPriceDispatch } from "../../context/TotalPriceContext";
 
 const TableCard = (props) => {
