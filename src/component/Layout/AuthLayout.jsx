@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DarkMode } from "../../context/darkmode";
+import { DarkMode } from "../../context/DarkMode";
 import Button from "../Elements/Button";
 
 const AuthLayout = (props) => {

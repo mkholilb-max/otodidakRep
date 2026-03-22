@@ -2,7 +2,7 @@ import Button from "../Elements/Button/index.jsx"
 import { useLogin } from "../../hooks/useLogin.jsx"
 import { useSelector } from "react-redux";
 import { useContext, useEffect, useState } from "react";
-import { DarkMode } from "../../context/darkmode.jsx";
+import { DarkMode } from "../../context/DarkMode.jsx";
 import { useTotalPrice } from "../../context/TotalPriceContext.jsx";
 
 const Navbar = () => {

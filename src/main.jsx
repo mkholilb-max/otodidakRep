@@ -11,8 +11,8 @@ import DetailProductPage from './Pages/detailedProduct.jsx'
 import { Provider } from 'react-redux'
 import store from './redux/store.js'
 import Navbar from './component/Layout/Navbar.jsx'
-import DarkModeContextProvider from './context/darkmode.jsx'
 import { TotalPriceProvider } from './context/TotalPriceContext.jsx'
+import DarkModeContextProvider from './context/DarkMode.jsx'
 
 
 const router = createBrowserRouter ([
