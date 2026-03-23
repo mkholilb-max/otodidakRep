@@ -13,81 +13,63 @@ const DetailProductPage = () => {
   }, [id]);
 
   console.log(product);
-  return (
-    <div className="w-full min-h-screen flex items-center justify-center">
-      {Object.keys(product).length > 0 && (
-        <div className="flex font-sans max-w-xl">
-        <div className="flex-none w-48 relative">
+return (
+  <div className="w-full min-h-screen flex items-center justify-center px-4 py-6">
+    {Object.keys(product).length > 0 && (
+      <div className="flex flex-col md:flex-row font-sans max-w-3xl w-full bg-white rounded-xl shadow-md overflow-hidden">
+        
+        {/* IMAGE */}
+        <div className="w-full md:w-1/2 h-64 md:h-auto">
           <img
             src={product.image}
             alt={product.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="w-full h-full object-cover"
             loading="lazy"
           />
         </div>
 
-        <form className="flex-auto p-6">
-          <div className="flex flex-wrap">
-            <h1 className="flex-auto text-lg font-semibold text-slate-900">
+        {/* CONTENT */}
+        <div className="flex flex-col flex-1 p-4 sm:p-6">
+          
+          {/* TITLE + PRICE */}
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+            <h1 className="text-base sm:text-lg font-semibold text-slate-900">
               {product.title}
             </h1>
-            <div className="text-lg font-semibold text-slate-500">${product.price}</div>
-            <div className="w-full flex-none text-sm font-medium text-slate-700 mt-2">
-              Rating {product.rating.rate} /5 ({product.rating.count} reviews)
+            <div className="text-lg font-bold text-green-600">
+              ${product.price}
             </div>
           </div>
 
-          <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-            <div className="space-x-2 flex text-sm">
-              {product.description}
-            </div>
+          {/* RATING */}
+          <div className="text-xs sm:text-sm text-slate-600 mt-1">
+            ⭐ {product.rating.rate} /5 ({product.rating.count} reviews)
           </div>
 
-          <div className="flex space-x-4 mb-6 text-sm font-medium">
-            <div className="flex-auto flex space-x-4">
-              <button
-                className="h-10 px-6 font-semibold rounded-md bg-black text-white"
-                type="submit"
-              >
-                Buy now
-              </button>
-              <button
-                className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
-                type="button"
-              >
-                Add to bag
-              </button>
-            </div>
+          {/* DESCRIPTION */}
+          <div className="mt-3 pb-4 border-b border-slate-200 text-sm text-slate-700">
+            {product.description}
+          </div>
 
-            <button
-              className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
-              type="button"
-              aria-label="Like"
-            >
-              <svg
-                width="20"
-                height="20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                />
-              </svg>
+          {/* BUTTON */}
+          <div className="flex flex-col sm:flex-row gap-2 mt-4">
+            <button className="w-full sm:w-auto h-10 px-4 font-semibold rounded-md bg-black text-white">
+              Buy Now
+            </button>
+            <button className="w-full sm:w-auto h-10 px-4 font-semibold rounded-md border border-slate-300 text-slate-900">
+              Add to Cart
             </button>
           </div>
 
-          <p className="text-sm text-slate-700">
-            Free shipping on all continental US orders.
+          {/* FOOTER */}
+          <p className="text-xs text-slate-500 mt-4">
+            Free shipping available.
           </p>
-        </form>
+        </div>
       </div>
-      )
-      }
-    </div>
-  );
+    )}
+  </div>
+);
 };
 
 export default DetailProductPage;

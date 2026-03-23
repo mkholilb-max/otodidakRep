@@ -26,7 +26,7 @@ const Navbar = () => {
             window.location.href = '/login';
         };
     return (
-        <div className="flex justify-end items-center h-15 bg-cyan-700 text-white px-10 ">
+        <div className="flex justify-center items-center sm:justify-end h-15 bg-cyan-700 text-white px-5 py-2">
             {username}
             <Button className="bg-blue-500 ml-5" onClick={handleLogout}>
                 Logout
@@ -34,7 +34,7 @@ const Navbar = () => {
              <Button className={`m-5 ${isDarkMode ? "bg-slate-700 text-white" : "bg-slate-300 text-black"}`} onClick={() => setIsDarkMode(!isDarkMode)}>
                 {isDarkMode ? "Light Mode" : "Dark Mode"}
             </Button>
-            <div className="flex items-center bg-gray-800 p-2 rounded-md ml-5">
+            <div className="hidden sm:flex items-center bg-gray-800 p-2 rounded-md ml-5">
                 Item: {totalCart} | price: {total.toLocaleString("id-ID", {
                     style: "currency",
                     currency: "USD",

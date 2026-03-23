@@ -21,8 +21,8 @@ useEffect(() => {
     return (
     <Fragment>
         <Navbar/>
-        <div className={`grid grid-cols-4 gap-4 py-5 max-w-7xl mx-auto ${isDarkMode && "bg-slate-900"}`}>
-            <div className="col-span-3 flex flex-wrap ">
+        <div className={`flex justify-between sm:grid grid-cols-4 gap-4 py-5 max-w-7xl mx-auto ${isDarkMode && "bg-slate-900"}`}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 col-span-3">
             {products.length > 0 &&
              products.map ((product) => (
                 <CardProduct key={product.id}>
@@ -35,8 +35,8 @@ useEffect(() => {
                 </CardProduct>
             ))}
             </div>
-            <div className="col-span-1 overflow-x-auto">
-                <h2 className="text-3xl font-bold text-blue-600 ml-2.5">Shopping Cart</h2>
+            <div className="col-span-1 h-screen overflow-x-auto">
+                <h2 className="hidden sm:block text-3xl font-bold text-blue-600 ml-2.5">Shopping Cart</h2>
                 <TableCard products={products}/>
             </div>
         </div>
